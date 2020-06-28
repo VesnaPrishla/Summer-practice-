@@ -1,6 +1,7 @@
 #include "h_utilits.h"
 int main()
 {
-	int** arr, n;
-	right_input(&n);
+	int** matrix, matrix_size;
+	overheating_protection(&matrix_size);
+	getchar();
 }
