@@ -5,10 +5,10 @@
 #include<conio.h>
 int main()
 {
-	int** matrix, *visited, start = 0, matrix_size;
+	int** matrix, * visited, start = 0, matrix_size, n = 5;
 	printf("\nadd the number of elements");
 	overheating_protection(&matrix_size);
-	if (matrix_allocation(&matrix,matrix_size, matrix_size) == 0)
+	if (matrix_allocation(&matrix, matrix_size, matrix_size) == 0)
 		return 0;
 	right_input_matrix(matrix, matrix_size, matrix_size);
 	if (array_allocation(&visited, matrix_size) == 0)
@@ -21,6 +21,14 @@ int main()
 	printf("\nadd the first apex");
 	overheating_protection_start(&start, matrix_size);
 	graph_in_depth(matrix, start, visited, matrix_size);
+	n = Check_zerro_array(visited, matrix_size);
+	printf("\nn=%d", n);
+	while (n == 0)
+	{
+		overheating_protection_start(&start, matrix_size);
+		graph_in_depth(matrix, start, visited, matrix_size);
+		n = Check_zerro_array(visited, matrix_size);
+	}
 	free_matrix(&matrix, matrix_size);
 	free(visited);
 	_getch();
@@ -33,3 +41,13 @@ int main()
  0 0 0 1 0 1 0
  0 0 0 1 1 0 0
  0 0 0 1 0 0 0*/
+
+
+ /*7
+  0 1 1 0 0 0 0
+  1 0 0 0 0 0 0
+  1 0 0 0 0 0 0
+  0 0 0 0 1 1 1
+  0 0 0 1 0 1 0
+  0 0 0 1 1 0 0
+  0 0 0 1 0 0 0*/

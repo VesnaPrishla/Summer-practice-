@@ -16,3 +16,13 @@ int array_allocation(int** array, int n)
 		return 0;
 	return 1;
 }
+
+//Проверка на наличие 0
+int Check_zerro_array(int* array, int array_size)
+{
+	int i = 0;
+	for (i = 0;i < array_size;i++)
+		if (array[i] == 0)
+			return 0;
+	return 1;
+ }
